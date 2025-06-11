@@ -1,11 +1,10 @@
 <script setup>
 import axios from "axios";
 import Navigation from "@/components/navigation.vue";
-import Carousel from "@/components/Carousel.vue";
 import Menubar from "@/components/menubar.vue";
-import Goods from "@/components/template/goods.vue";
 import Hot from "@/components/hot.vue";
 import last from "@/components/last.vue";
+import { NNotificationProvider } from "naive-ui";
 
 getList()
 
@@ -20,13 +19,15 @@ async function getList() {
 </script>
 
 <template>
-  <div class="container">
-    <Navigation/>
-    <router-view/>
-    <Menubar/>
-    <hot/>
-    <last/>
-  </div>
+  <n-notification-provider>
+    <div class="container">
+      <Navigation/>
+      <router-view class="router-view"/>
+      <Menubar/>
+      <hot/>
+      <last/>
+    </div>
+  </n-notification-provider>
 </template>
 
 <style scoped>
@@ -36,5 +37,12 @@ async function getList() {
   justify-content: center;
   align-content: center;
   margin: 0 auto;
+}
+.router-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 </style>
