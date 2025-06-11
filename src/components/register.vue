@@ -1,56 +1,68 @@
-<script lang="ts" setup>
-import "@/css/all.css"
-import Navigation from "@/components/navigation.vue";
-import {NButton} from "naive-ui";
-// document
-//     .getElementById("reg")
-//     .addEventListener("click", function (event) {
-//       event.preventDefault();
-//       const username = document.getElementById("username").value;
-//       const password = document.getElementById("password").value;
-//
-//       if (!username || !password) {
-//         alert("账号和密码不能为空！");
-//         return;
-//       }
-//
-//       localStorage.setItem("username", username);
-//       localStorage.setItem("password", password);
-//       alert("注册成功！");
-//       console.log("存储的数据：", { username, password });
-//       window.location.href = "login.html";
-//     });
-</script>
-
 <template>
-  <div>
-    <div class="container">
-      <div class="container">
-        <h3>欢迎-注册</h3>
-        <div class="alert" role="alert">提示消息</div>
-        <div class="form_wrap">
-          <form class="login-form">
-            <div class="mb-3">
-              <label class="form-label" for="username">账号</label>
-              <n-input id="username" name="username" placeholder="账号"
-                       type="text"/>
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="password">密码</label>
-              <input id="password" class="form-control password" name="password" type="password"/>
-            </div>
-            <div class="button1">
-              <button id="reg" class="btn btn-primary btn-login" type="button">
-                注 册
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+  <div class="components">
+    <n-card class="card">
+      <n-form>
+
+        <n-form-item class="n-form-item" label="用户名" path="username">
+          <n-input v-model:value="username" class="n-input" placeholder="请输入用户名"/>
+        </n-form-item>
+
+        <n-form-item class="n-form-item" label="电子邮件" path="email">
+          <n-input v-model:value="email" class="n-input" path="email" placeholder="请输入电子邮件"/>
+        </n-form-item>
+
+        <n-form-item class="n-form-item" label="密码" path="password">
+          <n-input v-model:value="password" class="n-input" path="password" placeholder="请输入密码"/>
+        </n-form-item>
+
+        <n-form-item class="n-form-item">
+          <n-button class="n-button" type="primary" @click="handleSubmit">注册</n-button>
+        </n-form-item>
+
+      </n-form>
+    </n-card>
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { NCard,NForm,NFormItem,NInput,NButton,useNotification } from 'naive-ui'
+
+const username = ref('')
+const email = ref('')
+const password = ref('')
+const router = useRouter()
+const Notification = useNotification()
+
+const handleSubmit = () => {
+  // 在此处处理表单提交逻辑，例如发送请求到后端
+  console.log('用户名:', username.value)
+  console.log('电子邮件:', email.value)
+  console.log('密码:', password.value)
+  localStorage.setItem('username', username.value)
+  localStorage.setItem('email', email.value)
+  localStorage.setItem('password', password.value)
+  Notification.success({
+    title: '注册成功',
+    content: '嘻嘻'
+  })
+  router.push('/carousel')
+}
+</script>
+
 <style scoped>
+.components{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.card {
+  width: 20vw;
+  height: 40vh;
+  background-color: #ffc107;
+}
+
 
 </style>
