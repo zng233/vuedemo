@@ -1,12 +1,15 @@
-<script setup>
-import {NButton} from 'naive-ui'
-</script>
-
 <template>
   <div class="nav">
-    <n-space>
-      <n-button class="left" type="primary">
+    <div class="nav-left">
+      <n-button type="primary">
         Primary
+      </n-button>
+    </div>
+    <div class="nav-right">
+      <n-button tertiary type="info">
+        <router-link to="/carousel">
+          主页
+        </router-link>
       </n-button>
       <n-button tertiary type="info">
         <router-link to="/register">
@@ -16,24 +19,26 @@ import {NButton} from 'naive-ui'
       <n-button tertiary type="info">
         登录
       </n-button>
-    </n-space>
-    <router-view/>
+    </div>
   </div>
 </template>
 
 <style scoped>
-/* 导航栏 */
 .nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   width: 100%;
   height: 50px;
 }
-
-.left {
-  order: -1;
+.nav-left {
+  flex: 1;
 }
-
+.nav-right {
+  display: flex;
+  gap: 8px;
+}
 </style>
+<script setup lang="ts">
+</script>
