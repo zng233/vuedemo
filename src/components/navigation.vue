@@ -17,7 +17,9 @@
         </router-link>
       </n-button>
       <n-button tertiary type="info">
-        登录
+        <router-link to="/login">
+          登录
+        </router-link>
       </n-button>
     </div>
   </div>
