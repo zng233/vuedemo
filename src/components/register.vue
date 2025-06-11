@@ -24,7 +24,6 @@ import {NButton} from "naive-ui";
 
 <template>
   <div>
-    <navigation/>
     <div class="container">
       <div class="container">
         <h3>欢迎-注册</h3>
