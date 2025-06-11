@@ -1,6 +1,7 @@
 import {createRouter, createWebHashHistory} from "vue-router";
 import home from "app.vue"
 import reg from "@/components/register.vue"
+import carousel from "@/components/Carousel.vue";
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -13,6 +14,10 @@ const router = createRouter({
         {
             path: "/register",
             component: reg
+        },
+        {
+            path: "/carousel",
+            component: carousel
         }
     ]
 });
