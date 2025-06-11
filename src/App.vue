@@ -22,7 +22,9 @@ async function getList() {
   <n-notification-provider>
     <div class="container">
       <Navigation/>
-      <router-view class="router-view"/>
+      <div class="router-view">
+        <router-view/>
+      </div>
       <Menubar/>
       <hot/>
       <last/>
@@ -40,9 +42,6 @@ async function getList() {
 }
 .router-view {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-content: center;
-  align-items: center;
 }
 </style>
