@@ -1,0 +1,271 @@
+      /*全局设置*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Microsoft YaHei", sans-serif;
+      }
+
+      .img-standard {
+        height: 100%;
+        width: 100%;
+      }
+
+      /* 导航栏 */
+      nav {
+        background-color: #fff;
+        padding: 1px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .nav-links img {
+        height: 50px;
+        width: 50px;
+      }
+
+      /* 轮播图 */
+      .banner {
+          position: relative;
+          overflow: hidden;
+          margin-top: 70px;
+          height: 600px;
+          background: linear-gradient(45deg, #2d2d2d, #5a5a5a);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+      }
+
+      .slides-container {
+          display: flex;
+          transition: transform 0.5s ease;
+          height: 100%;
+      }
+
+      .slide {
+          min-width: 100%;
+          height: 100%;
+      }
+
+      .slide img {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+      }
+
+      .slide-controls {
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          z-index: 10;
+      }
+
+      .indicator {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.5);
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+
+      .indicator.active {
+          background-color: white;
+      }
+
+      .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.3);
+          color: white;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          font-size: 20px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          transition: background 0.3s;
+      }
+
+      .arrow:hover {
+          background: rgba(0, 0, 0, 0.6);
+      }
+
+      .prev {
+          left: 20px;
+      }
+
+      .next {
+          right: 20px;
+      }
+
+      /* 商品分类样式（包含下拉菜单） */
+      .categories {
+        padding: 3rem 5%;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      .category-card {
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        text-align: center;
+        padding: 1rem;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        transition: transform 0.3s;
+      }
+
+      .category-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 1rem;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+      }
+
+      .category-card:hover .category-dropdown-content {
+        display: block;
+      }
+
+      .category-dropdown-content a {
+        text-decoration: none;
+        width: 170px;
+        color: #333;
+        padding: 1rem 0;
+        display: block;
+        transition: color 0.3s;
+      }
+
+      .category-dropdown-content a:hover {
+        color: #007bff;
+      }
+
+      /* 促销板块 */
+      .promotion-section {
+        padding: 2px 5%;
+        background-color: #f7f7f7;
+      }
+
+      .promotion-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+      }
+
+      .promo-title {
+        text-align: center;
+        margin-bottom: 2px;
+      }
+
+      .promo-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .promo-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .promo-card p {
+        color: #CC0000;
+      }
+
+      /* 登录注册和购物车的样式 */
+
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 1.5px;
+      }
+
+      .user a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+      }
+
+      /* 页脚*/
+      footer {
+        background-color: #2d2d2d;
+        color: white;
+        padding: 3px 5%;
+        margin-top: 5px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2px;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 15px;
+        color: #ccc;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section li {
+        margin-bottom: 8px;
+      }
+
+      .footer-section a {
+        color: #999;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .categories {
+          flex-wrap: wrap;
+        }
+
+        .promotion-grid {
+          grid-template-columns: 1fr;
+        }
+      }

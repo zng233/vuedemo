@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/a11.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/a11.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="app">
+    <nav>
+        <div class="nav-links"></div>
+        <div class="user">
+            <a href="register.html"><h2>注册</h2></a>
+            <span>|</span>
+            <a href="login.html"><h2>登录</h2></a>
+        </div>
+    </nav>
+
+    <!-- 轮播图组件 -->
+    <section class="banner">
+        <div class="slides-container" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+            <div class="slide" v-for="(slide, index) in slides" :key="index">
+                <img :src="slide.image" :alt="slide.alt">
+            </div>
+        </div>
+        <button class="arrow prev" @click="prevSlide">❮</button>
+        <button class="arrow next" @click="nextSlide">❯</button>
+        <div class="slide-controls">
+            <div
+                    class="indicator"
+                    v-for="(slide, index) in slides"
+                    :key="index"
+                    :class="{ active: index === currentSlide }"
+                    @click="currentSlide = index"
+            ></div>
+        </div>
+    </section>
+
+    <!-- 分类导航 -->
+    <section class="categories">
+        <div
+                class="category-card"
+                v-for="(category, index) in categories"
+                :key="index"
+        >
+            <h3>{{ category.name }}</h3>
+            <div class="category-dropdown-content" v-if="category.items">
+                <a v-for="(item, i) in category.items" :key="i" href="">{{ item }}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品展示区域 -->
+    <section
+            class="promotion-section"
+            v-for="(section, sectionIndex) in productSections"
+            :key="sectionIndex"
+    >
+        <h2 class="promo-title" :style="section.style || {}">{{ section.title }}</h2>
+        <div class="promotion-grid">
+            <div
+                    class="promo-card"
+                    v-for="(product, productIndex) in section.products"
+                    :key="productIndex"
+            >
+                <a :href="product.link || '#'">
+                    <img :src="product.image" :alt="product.name">
+                </a>
+                <div style="padding: 1px;">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.price }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section" v-for="(section, index) in footerSections" :key="index">
+                <h4>{{ section.title }}</h4>
+                <ul>
+                    <li v-for="(link, i) in section.links" :key="i">
+                        <a :href="link.url">{{ link.text }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const { createApp, ref, onMounted } = Vue;
+
+    createApp({
+        setup() {
+            // 轮播图数据
+            const slides = ref([
+                {
+                    image: "https://pic.nximg.cn/file/20230608/34755942_174625844109_2.jpg",
+                    alt: "Banner 1"
+                },
+                {
+                    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80",
+                    alt: "Banner 2"
+                },
+                {
+                    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80",
+                    alt: "Banner 3"
+                }
+            ]);
+
+            const currentSlide = ref(0);
+
+            // 轮播图控制方法
+            const nextSlide = () => {
+                currentSlide.value = (currentSlide.value + 1) % slides.value.length;
+            };
+
+            const prevSlide = () => {
+                currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length;
+            };
+
+            // 自动轮播
+            onMounted(() => {
+                setInterval(nextSlide, 5000);
+            });
+
+            // 分类导航数据
+            const categories = ref([
+                {
+                    name: "智能手机",
+                    items: ["小米", "Vivo", "华为"]
+                },
+                {
+                    name: "笔记本电脑",
+                    items: ["联想", "华硕", "戴尔"]
+                },
+                {
+                    name: "智能设备",
+                    items: ["米家空气净化器", "华为路由器", "米家智能插座"]
+                },
+                {
+                    name: "无人机"
+                }
+            ]);
+
+            // 商品区域数据
+            const productSections = ref([
+                {
+                    title: "热销产品",
+                    products: [
+                        {
+                            image: "https://res.vmallres.com/pimages/uomcdn/CN/pms/202403/gbom/6942103117060/800_800_B0E613B07478197CE91F1E1D61F3FCB1mp.png",
+                            name: "MateBook X Pro",
+                            price: "￥9999",
+                            link: "details1.html"
+                        },
+                        {
+                            image: "https://2e.zol-img.com.cn/product/256_320x240/384/ce9AbzHCFje8Q.jpg",
+                            name: "Watch GT 4",
+                            price: "￥1499"
+                        },
+                        {
+                            image: "https://tse4-mm.cn.bing.net/th/id/OIP-C.c3_m5m4w4zQq1Ncfk8vDfAHaHa?w=191&h=191&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+                            name: "MatePad Pro",
+                            price: "￥3999"
+                        }
+                    ]
+                },
+                {
+                    title: "智选产品",
+                    style: { textAlign: "center", marginBottom: "2px" },
+                    products: [
+                        {
+                            image: "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1603261841.90278930.jpg",
+                            name: "智能积木 猎户座六足泰坦",
+                            price: "￥479"
+                        },
+                        {
+                            image: "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1572939589.21071305.jpg",
+                            name: "工程挖掘机",
+                            price: "￥199"
+                        },
+                        {
+                            image: "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/7E7D0914C517480EC79A67D860D90C3D.png",
+                            name: "Xiaomi全屋路由 BE3600Pro 套装",
+                            price: "￥699"
+                        }
+                    ]
+                },
+                {
+                    title: "猜你需要",
+                    style: { textAlign: "center", marginBottom: "2px" },
+                    products: [
+                        {
+                            image: "https://p2.lefile.cn/product/adminweb/2025/04/28/TkbovMh7JH4o7Xo3Kmf8mNlxW-0419.jpg",
+                            name: "联想拯救者Y9000P",
+                            price: "￥29400"
+                        },
+                        {
+                            image: "https://dlcdnwebimgs.asus.com.cn/gain/E17607E8-B0AA-41B4-AFE2-8F30F0899C3E/w1000/h732",
+                            name: "ROG 魔霸9",
+                            price: "￥13999"
+                        },
+                        {
+                            image: "https://dlcdnwebimgs.asus.com.cn/gain/1DB8FC36-4B60-42A7-A391-2CA705EE315F/w717/h525/w273",
+                            name: "ROG 幻X 2025",
+                            price: "暂无库存"
+                        }
+                    ]
+                },
+                {
+                    title: "为您推荐",
+                    style: { textAlign: "center", marginBottom: "2px" },
+                    products: [
+                        {
+                            image: "https://se-cdn.djiits.com/tpc/uploads/carousel/image/ab8a2879aa665f95bd1dfba291fb6919@ultra.webp",
+                            name: "DJI Mavic 4 Pro(DJI RC 2)",
+                            price: "￥13888"
+                        },
+                        {
+                            image: "https://se-cdn.djiits.com/tpc/uploads/carousel/image/560f1b92810c859a4ab02fdf9195d052@ultra.webp",
+                            name: "DJI Flip 畅飞套装（带屏遥控器）",
+                            price: "￥4988"
+                        }
+                    ]
+                }
+            ]);
+
+            // 页脚数据
+            const footerSections = ref([
+                {
+                    title: "服务支持",
+                    links: [
+                        { text: "售后政策", url: "#" },
+                        { text: "自助服务", url: "#" },
+                        { text: "维修网点", url: "#" }
+                    ]
+                },
+                {
+                    title: "购物相关",
+                    links: [
+                        { text: "支付方式", url: "#" },
+                        { text: "配送服务", url: "#" },
+                        { text: "退换货政策", url: "#" }
+                    ]
+                },
+                {
+                    title: "关于我们",
+                    links: [
+                        { text: "公司介绍", url: "#" },
+                        { text: "新闻中心", url: "#" },
+                        { text: "加入我们", url: "#" }
+                    ]
+                },
+                {
+                    title: "关注我们",
+                    links: [
+                        { text: "新浪微博", url: "#" },
+                        { text: "微信公众号", url: "#" }
+                    ]
+                }
+            ]);
+
+            return {
+                slides,
+                currentSlide,
+                nextSlide,
+                prevSlide,
+                categories,
+                productSections,
+                footerSections
+            };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>
