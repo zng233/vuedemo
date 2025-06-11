@@ -22,7 +22,7 @@ async function getList() {
 <template>
   <div class="container">
     <Navigation/>
-    <carousel/>
+    <router-view/>
     <Menubar/>
     <hot/>
     <last/>
@@ -31,7 +31,6 @@ async function getList() {
 
 <style scoped>
 .container {
-  width: 1920px;
   display: flex;
   flex-direction: column;
   justify-content: center;
