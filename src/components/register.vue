@@ -1,5 +1,4 @@
 <template>
-  <div class="components">
     <n-card class="card">
       <n-form>
 
@@ -21,7 +20,6 @@
 
       </n-form>
     </n-card>
-  </div>
 </template>
 
 <script setup>
@@ -52,12 +50,6 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
-.components{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
 .card {
   width: 20vw;
   height: 40vh;
