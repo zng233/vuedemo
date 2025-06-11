@@ -12,8 +12,9 @@
         </router-link>
       </n-button>
       <n-button tertiary type="info">
+        注册
         <router-link to="/register">
-          注册
+
         </router-link>
       </n-button>
       <n-button tertiary type="info">
@@ -40,5 +41,6 @@
   gap: 8px;
 }
 </style>
-<script setup lang="ts">
+<script setup>
+import { NButton } from 'naive-ui';
 </script>
