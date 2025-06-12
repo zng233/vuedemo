@@ -1,5 +1,5 @@
 import {createRouter, createWebHashHistory} from "vue-router";
-import home from "app.vue"
+import aggregate from "@/components/aggregate.vue"
 import reg from "@/components/register.vue"
 import carousel from "@/components/Carousel.vue";
 import login from "@/components/login.vue";
@@ -10,7 +10,7 @@ const router = createRouter({
         {
             //首页
             path: "/",
-            component: home
+            component: aggregate,
         },
         {
             path: "/register",
@@ -20,10 +20,10 @@ const router = createRouter({
             path: "/login",
             component: login
         },
-        {
-            path: "/carousel",
-            component: carousel
-        }
+        // {
+        //     path: "/aggregate",
+        //     component: carousel
+        // }
     ]
 });
 export default router;
