@@ -4,7 +4,7 @@ import Navigation from "@/components/navigation.vue";
 import Menubar from "@/components/menubar.vue";
 import Hot from "@/components/hot.vue";
 import last from "@/components/last.vue";
-import { NNotificationProvider } from "naive-ui";
+import {NNotificationProvider} from "naive-ui";
 
 getList()
 
@@ -25,9 +25,9 @@ async function getList() {
       <div class="router-view">
         <router-view/>
       </div>
-      <Menubar/>
-      <hot/>
-      <last/>
+      <!--      <Menubar/>-->
+      <!--      <hot/>-->
+      <!--      <last/>-->
     </div>
   </n-notification-provider>
 </template>
@@ -40,6 +40,7 @@ async function getList() {
   align-content: center;
   margin: 0 auto;
 }
+
 .router-view {
   display: flex;
   justify-content: center;
