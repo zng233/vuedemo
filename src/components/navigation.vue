@@ -1,13 +1,13 @@
 <template>
   <div class="nav">
     <div class="nav-left">
-      <n-button type="primary">
-        Primary
-      </n-button>
+      <!--          <n-button type="primary">-->
+      <!--            Primary-->
+      <!--          </n-button>-->
     </div>
     <div class="nav-right">
       <n-button tertiary type="info">
-        <router-link to="/carousel">
+        <router-link to="/">
           主页
         </router-link>
       </n-button>
@@ -34,14 +34,16 @@
   width: 100%;
   height: 50px;
 }
+
 .nav-left {
   flex: 1;
 }
+
 .nav-right {
   display: flex;
   gap: 8px;
 }
 </style>
 <script setup>
-import { NButton } from 'naive-ui';
+import {NButton} from 'naive-ui';
 </script>
