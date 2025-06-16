@@ -8,19 +8,19 @@ import {NCarousel} from "naive-ui";
       <n-carousel autoplay class="carousel">
         <img
             class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
+            src="https://res2.vmallres.com/pimages/FssCdnProxy/vmall_product_uom/pmsSalesFile/428_428_447843972C424185C0189715B1BBFCFB.jpg"
         >
         <img
             class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
+            src="https://res2.vmallres.com/pimages/FssCdnProxy/vmall_product_uom/pmsSalesFile/428_428_82306C5CB4D51C694AFAF21E39AFB437.png"
         >
         <img
             class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
+            src="https://res2.vmallres.com/pimages/FssCdnProxy/vmall_product_uom/pmsSalesFile/428_428_7AA9465982C4CC3C5615F2AF98B5FF1D.png"
         >
         <img
             class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
+            src="https://res2.vmallres.com/pimages/FssCdnProxy/vmall_product_uom/pmsSalesFile/428_428_ADA5018515E1D00B15AF544866BEFBD8.png"
         >
       </n-carousel>
     </div>
@@ -80,9 +80,10 @@ import {NCarousel} from "naive-ui";
   display: flex;
   width: 100%;
   max-width: 1200px;
-  height: 100vh;
+  height: 77vh;
   margin: 0 auto;
 }
+
 .left {
   display: flex;
   flex-direction: column;
@@ -92,13 +93,15 @@ import {NCarousel} from "naive-ui";
 .right {
   width: 50%;
 }
-.carousel{
+
+.carousel {
   margin: 5% auto auto;
   width: 90%;
   height: 50vh;
   background-color: #ffc107;
 }
-.carousel img{
+
+.carousel img {
   margin: auto;
   width: 100%;
   height: 100%;
