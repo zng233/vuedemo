@@ -53,7 +53,6 @@ const handleSubmit = () => {
 .card {
   width: 20vw;
   height: 40vh;
-  background-color: #ffc107;
 }
 
 

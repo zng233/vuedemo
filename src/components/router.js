@@ -1,6 +1,7 @@
 import {createRouter, createWebHashHistory} from "vue-router";
-import aggregate from "@/components/aggregate.vue"
+import AggregateHome from "@/components/aggregate-home.vue"
 import reg from "@/components/register.vue"
+import details from "@/components/aggregate-details-1.vue"
 import carousel from "@/components/Carousel.vue";
 import login from "@/components/login.vue";
 
@@ -10,7 +11,7 @@ const router = createRouter({
         {
             //首页
             path: "/",
-            component: aggregate,
+            component: AggregateHome,
         },
         {
             path: "/register",
@@ -20,8 +21,12 @@ const router = createRouter({
             path: "/login",
             component: login
         },
+        {
+            path: "/details",
+            component: details
+        },
         // {
-        //     path: "/aggregate",
+        //     path: "/AggregateHome",
         //     component: carousel
         // }
     ]

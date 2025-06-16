@@ -80,7 +80,6 @@ import {NCarousel} from "naive-ui";
   display: flex;
   width: 100%;
   height: 100vh;
-  background-color: #f5f5f5;
 }
 .left {
   display: flex;

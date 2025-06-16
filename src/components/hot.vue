@@ -9,9 +9,11 @@ import Goods from "@/components/template/goods.vue";
       <h2>热销商品</h2>
     </n-flex>
     <n-flex align="center" class="hot" justify="space-evenly" wrap="wrap">
-      <goods
-          imgurl="https://res.vmallres.com/pimages/uomcdn/CN/pms/202403/gbom/6942103117060/800_800_B0E613B07478197CE91F1E1D61F3FCB1mp.png"
-          name="MateBook X Pro" price="￥9999"/>
+      <router-link to="/details">
+        <goods
+            imgurl="https://res.vmallres.com/pimages/uomcdn/CN/pms/202403/gbom/6942103117060/800_800_B0E613B07478197CE91F1E1D61F3FCB1mp.png"
+            name="MateBook X Pro" price="￥9999"/>
+      </router-link>
       <goods
           imgurl="https://2e.zol-img.com.cn/product/256_320x240/384/ce9AbzHCFje8Q.jpg"
           name="Watch GT 4" price="￥1499"/>

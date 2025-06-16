@@ -4,6 +4,7 @@ import Navigation from "@/components/navigation.vue";
 import {NNotificationProvider} from "naive-ui";
 import details1 from "@/components/details1.vue";
 import Last from "@/components/last.vue";
+import AggregateDetails1 from "@/components/aggregate-details-1.vue";
 
 getList()
 
@@ -20,13 +21,10 @@ async function getList() {
 <template>
   <n-notification-provider>
     <div class="container">
-<!--      <Navigation/>-->
+      <Navigation/>
       <div class="router-view">
-<!--        <router-view/>-->
-        <details1/>
+        <router-view/>
       </div>
-      <!--      <Menubar/>-->
-      <!--      <hot/>-->
     </div>
   </n-notification-provider>
 </template>
