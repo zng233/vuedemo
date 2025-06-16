@@ -3,84 +3,104 @@ import {NCarousel} from "naive-ui";
 </script>
 
 <template>
-  <div>
-  <div class="product-info">
-    <n-carousel autoplay >
-      <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
-      >
-      <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
-      >
-      <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
-      >
-      <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
-      >
-    </n-carousel>
-
-    <h1 class="product-title">MateBook X Pro</h1>
-
-    <div class="price-section">
-      <div class="price">¥9999</div>
-      <div class="promotion">限时优惠 立减500元</div>
+  <div class="flex">
+    <div class="left">
+      <n-carousel autoplay class="carousel">
+        <img
+            class="carousel-img"
+            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
+        >
+        <img
+            class="carousel-img"
+            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
+        >
+        <img
+            class="carousel-img"
+            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
+        >
+        <img
+            class="carousel-img"
+            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
+        >
+      </n-carousel>
     </div>
+    <div class="right">
 
-    <div class="config-option">
-      <div class="config-title">选择颜色</div>
-      <div class="config-buttons">
-        <div class="config-btn selected">白沙银</div>
-        <div class="config-btn">雅川青</div>
-        <div class="config-btn">南糯紫</div>
-      </div>
-    </div>
+      <div class="product-info">
 
-    <div class="config-option">
-      <div class="config-title">选择版本</div>
-      <div class="config-buttons">
-        <div class="config-btn selected">12GB+512GB</div>
-        <div class="config-btn">12GB+1TB</div>
-      </div>
-    </div>
 
-    <div class="buy-buttons">
-      <button class="buy-btn">立即购买</button>
-      <button class="buy-btn">加入购物车</button>
-    </div>
+        <h1 class="product-title">MateBook X Pro</h1>
 
-    <div class="service-promise">
-      <div class="service-item">
-        次日达服务
-      </div>
-      <div class="service-item">
-        官方保修
-      </div>
-      <div class="service-item">
-        7天无理由退货
+        <div class="price-section">
+          <div class="price">¥9999</div>
+          <div class="promotion">限时优惠 立减500元</div>
+        </div>
+
+        <div class="config-option">
+          <div class="config-title">选择颜色</div>
+          <div class="config-buttons">
+            <div class="config-btn selected">白沙银</div>
+            <div class="config-btn">雅川青</div>
+            <div class="config-btn">南糯紫</div>
+          </div>
+        </div>
+
+        <div class="config-option">
+          <div class="config-title">选择版本</div>
+          <div class="config-buttons">
+            <div class="config-btn selected">12GB+512GB</div>
+            <div class="config-btn">12GB+1TB</div>
+          </div>
+        </div>
+
+        <div class="buy-buttons">
+          <button class="buy-btn">立即购买</button>
+          <button class="buy-btn">加入购物车</button>
+        </div>
+
+        <div class="service-promise">
+          <div class="service-item">
+            次日达服务
+          </div>
+          <div class="service-item">
+            官方保修
+          </div>
+          <div class="service-item">
+            7天无理由退货
+          </div>
+        </div>
       </div>
     </div>
   </div>
-    <div  />
-    </div>
 </template>
 
 <style scoped>
-.left{
+
+.flex{
   display: flex;
-  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5f5;
 }
-.right{
+.left {
   display: flex;
+  flex-direction: column;
+  width: 50%;
 }
-.carousel-img {
-  width: 10%;
-  height: 240px;
-  object-fit: cover;
+
+.right {
+  width: 30%;
+}
+.carousel{
+  margin: 5% auto auto;
+  width: 720px;
+  height: 480px;
+  background-color: #ffc107;
+}
+.carousel img{
+  margin: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .product-info {
