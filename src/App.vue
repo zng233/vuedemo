@@ -41,5 +41,6 @@ async function getList() {
 .router-view {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 </style>

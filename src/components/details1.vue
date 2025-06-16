@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import {NCarousel} from "naive-ui";
 </script>
 
@@ -76,10 +76,12 @@ import {NCarousel} from "naive-ui";
 
 <style scoped>
 
-.flex{
+.flex {
   display: flex;
   width: 100%;
+  max-width: 1200px;
   height: 100vh;
+  margin: 0 auto;
 }
 .left {
   display: flex;
@@ -88,12 +90,12 @@ import {NCarousel} from "naive-ui";
 }
 
 .right {
-  width: 30%;
+  width: 50%;
 }
 .carousel{
   margin: 5% auto auto;
-  width: 720px;
-  height: 480px;
+  width: 90%;
+  height: 50vh;
   background-color: #ffc107;
 }
 .carousel img{
