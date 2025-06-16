@@ -1,10 +1,9 @@
 <script setup>
 import axios from "axios";
 import Navigation from "@/components/navigation.vue";
-import Menubar from "@/components/menubar.vue";
-import Hot from "@/components/hot.vue";
-import last from "@/components/last.vue";
 import {NNotificationProvider} from "naive-ui";
+import details1 from "@/components/details1.vue";
+import Last from "@/components/last.vue";
 
 getList()
 
@@ -21,13 +20,13 @@ async function getList() {
 <template>
   <n-notification-provider>
     <div class="container">
-      <Navigation/>
+<!--      <Navigation/>-->
       <div class="router-view">
-        <router-view/>
+<!--        <router-view/>-->
+        <details1/>
       </div>
       <!--      <Menubar/>-->
       <!--      <hot/>-->
-      <!--      <last/>-->
     </div>
   </n-notification-provider>
 </template>

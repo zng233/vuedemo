@@ -1,31 +1,31 @@
 <template>
-    <n-card class="card">
-      <n-form>
+  <n-card class="card">
+    <n-form>
 
-        <n-form-item class="n-form-item" label="用户名" path="username">
-          <n-input v-model:value="username" class="n-input" placeholder="请输入用户名"/>
-        </n-form-item>
+      <n-form-item class="n-form-item" label="用户名" path="username">
+        <n-input v-model:value="username" class="n-input" placeholder="请输入用户名"/>
+      </n-form-item>
 
-        <n-form-item class="n-form-item" label="电子邮件" path="email">
-          <n-input v-model:value="email" class="n-input" path="email" placeholder="请输入电子邮件"/>
-        </n-form-item>
+      <n-form-item class="n-form-item" label="电子邮件" path="email">
+        <n-input v-model:value="email" class="n-input" path="email" placeholder="请输入电子邮件"/>
+      </n-form-item>
 
-        <n-form-item class="n-form-item" label="密码" path="password">
-          <n-input v-model:value="password" class="n-input" path="password" placeholder="请输入密码"/>
-        </n-form-item>
+      <n-form-item class="n-form-item" label="密码" path="password">
+        <n-input v-model:value="password" class="n-input" path="password" placeholder="请输入密码"/>
+      </n-form-item>
 
-        <n-form-item class="n-form-item">
-          <n-button class="n-button" type="primary" @click="handleSubmit">注册</n-button>
-        </n-form-item>
+      <n-form-item class="n-form-item">
+        <n-button class="n-button" type="primary" @click="handleSubmit">注册</n-button>
+      </n-form-item>
 
-      </n-form>
-    </n-card>
+    </n-form>
+  </n-card>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { NCard,NForm,NFormItem,NInput,NButton,useNotification } from 'naive-ui'
+import {ref} from 'vue'
+import {useRouter} from 'vue-router'
+import {NCard, NForm, NFormItem, NInput, NButton, useNotification} from 'naive-ui'
 
 const username = ref('')
 const email = ref('')
@@ -43,7 +43,7 @@ const handleSubmit = () => {
   localStorage.setItem('password', password.value)
   Notification.success({
     title: '注册成功',
-    content: '嘻嘻'
+    content: '呃呃'
   })
   router.push('/carousel')
 }

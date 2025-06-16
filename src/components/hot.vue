@@ -28,7 +28,7 @@ import Goods from "@/components/template/goods.vue";
           imgurl="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1603261841.90278930.jpg"
           name="智能积木 猎户座六足泰坦" price="￥479"/>
       <goods
-          imgurl="https://2e.zol-img.com.cn/product/256_320x240/384/ce9AbzHCFje8Q.jpg"
+          imgurl="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/7E7D0914C517480EC79A67D860D90C3D.png"
           name="Xiaomi全屋路由 BE3600Pro 套装" price="￥1499"/>
       <goods
           imgurl="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1572939589.21071305.jpg"
