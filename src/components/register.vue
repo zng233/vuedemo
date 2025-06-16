@@ -53,7 +53,6 @@ const handleSubmit = () => {
 .card {
   width: 20vw;
   height: 40vh;
+  margin-top: 150px;
 }
-
-
 </style>

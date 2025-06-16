@@ -7,7 +7,7 @@
       </n-form-item>
 
       <n-form-item class="n-form-item" label="密码" path="password">
-        <n-input v-model:value="password" class="n-input" type="password" placeholder="请输入密码"/>
+        <n-input v-model:value="password" class="n-input" placeholder="请输入密码" type="password"/>
       </n-form-item>
 
       <n-form-item class="n-form-item">
@@ -19,9 +19,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { NForm, NFormItem, NInput, NButton, NCard, useNotification } from 'naive-ui'
+import {ref} from 'vue'
+import {useRouter} from 'vue-router'
+import {NForm, NFormItem, NInput, NButton, NCard, useNotification} from 'naive-ui'
 
 const username = ref('')
 const password = ref('')
@@ -51,5 +51,6 @@ const handleLogin = () => {
 .card {
   width: 20vw;
   height: 30vh;
+  margin-top: 150px;
 }
 </style>
