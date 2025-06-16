@@ -26,6 +26,11 @@
 </template>
 
 <style scoped>
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -42,6 +47,12 @@
 .nav-right {
   display: flex;
   gap: 8px;
+  margin-right: 100px;
+}
+
+.router-link-active {
+  text-decoration: none;
+  color: blue;
 }
 </style>
 <script setup>

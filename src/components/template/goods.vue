@@ -27,10 +27,11 @@ const props = defineProps({
   padding: 10px;
   background-color: #f9f9f9;
 }
-  img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
 
 </style>
