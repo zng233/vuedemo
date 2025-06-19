@@ -4,6 +4,7 @@ import reg from "@/components/register.vue"
 import details from "@/components/aggregate-details-1.vue"
 import carousel from "@/components/Carousel.vue";
 import login from "@/components/login.vue";
+import shop from "@/components/shop.vue";
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -25,6 +26,10 @@ const router = createRouter({
             path: "/details",
             component: details
         },
+        {
+            path: "/shop",
+            component: shop
+        }
         // {
         //     path: "/AggregateHome",
         //     component: carousel

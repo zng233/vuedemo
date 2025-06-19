@@ -4,7 +4,7 @@ import {NDropdown, NButton, NFlex} from "naive-ui";
 const phone = [
   {
     label: '小米',
-    key: '谁他妈买小米'
+    key: '0'
   },
   {
     label: 'vivo',
@@ -19,7 +19,7 @@ const phone = [
 const computer = [
   {
     label: '联想',
-    key: '谁他妈买联想'
+    key: '0'
   },
   {
     label: '华硕',
@@ -34,7 +34,7 @@ const computer = [
 const devices = [
   {
     label: '米家空气净化器',
-    key: '谁他妈买小米'
+    key: '0'
   },
   {
     label: '华为路由器',
@@ -52,14 +52,14 @@ const handleSelect = (key) => {
 
 <template>
 
-  <n-flex justify="center" align="center" class="menubar">
-    <n-dropdown trigger="hover" :options="phone" @select="handleSelect">
+  <n-flex align="center" class="menubar" justify="center">
+    <n-dropdown :options="phone" trigger="hover" @select="handleSelect">
       <n-button class="n-button">智能手机</n-button>
     </n-dropdown>
-    <n-dropdown trigger="hover" :options="computer" @select="handleSelect">
-      <n-button class="n-button" >智能电脑</n-button>
+    <n-dropdown :options="computer" trigger="hover" @select="handleSelect">
+      <n-button class="n-button">智能电脑</n-button>
     </n-dropdown>
-    <n-dropdown trigger="hover" :options="devices" @select="handleSelect">
+    <n-dropdown :options="devices" trigger="hover" @select="handleSelect">
       <n-button class="n-button">智能设备</n-button>
     </n-dropdown>
     <n-dropdown trigger="hover">
@@ -69,15 +69,16 @@ const handleSelect = (key) => {
 </template>
 
 <style scoped>
-  .menubar {
-    width: 100%;
-    height: 150px;
-    margin-top: 1px;
-    background-color: white;
-  }
-  .n-button{
-    width: 150px;
-    height: 50px;
-    font-size: 20px;
-  }
+.menubar {
+  width: 100%;
+  height: 150px;
+  margin-top: 1px;
+  background-color: white;
+}
+
+.n-button {
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+}
 </style>

@@ -9,7 +9,8 @@ const footerSections = ref([
       {text: "售后政策", url: "#"},
       {text: "自助服务", url: "#"},
       {text: "维修网点", url: "#"}
-    ]
+    ],
+    id: 0
   },
   {
     title: "购物相关",
@@ -17,7 +18,8 @@ const footerSections = ref([
       {text: "支付方式", url: "#"},
       {text: "配送服务", url: "#"},
       {text: "退换货政策", url: "#"}
-    ]
+    ],
+    id: 1
   },
   {
     title: "关于我们",
@@ -25,14 +27,16 @@ const footerSections = ref([
       {text: "公司介绍", url: "#"},
       {text: "新闻中心", url: "#"},
       {text: "加入我们", url: "#"}
-    ]
+    ],
+    id: 2
   },
   {
     title: "关注我们",
     links: [
       {text: "新浪微博", url: "#"},
       {text: "微信公众号", url: "#"}
-    ]
+    ],
+    id: 3
   }
 ]);
 

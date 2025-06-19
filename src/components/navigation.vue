@@ -21,6 +21,11 @@
           登录
         </router-link>
       </n-button>
+      <n-button tertiary type="info">
+        <router-link to="/shop">
+          购物车
+        </router-link>
+      </n-button>
     </div>
   </div>
 </template>
