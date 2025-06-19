@@ -1,5 +1,18 @@
 <script setup>
-import {NCarousel} from "naive-ui";
+import {NCarousel, NDivider, NDescriptions} from "naive-ui";
+import {ref} from 'vue';
+import router from "@/components/router.js";
+
+const selectedColor = ref('白沙银');
+const selectedVersion = ref('12GB+512GB');
+const handleColorSelect = (color) => {
+  selectedColor.value = color;
+  console.log(`选中颜色: ${selectedColor.value}`);
+};
+const handleVersionSelect = (version) => {
+  selectedVersion.value = version;
+  console.log(`选中版本: ${selectedVersion.value}`);
+};
 </script>
 
 <template>
@@ -25,12 +38,8 @@ import {NCarousel} from "naive-ui";
       </n-carousel>
     </div>
     <div class="right">
-
       <div class="product-info">
-
-
         <h1 class="product-title">MateBook X Pro</h1>
-
         <div class="price-section">
           <div class="price">¥9999</div>
           <div class="promotion">限时优惠 立减500元</div>
@@ -39,34 +48,59 @@ import {NCarousel} from "naive-ui";
         <div class="config-option">
           <div class="config-title">选择颜色</div>
           <div class="config-buttons">
-            <div class="config-btn selected">白沙银</div>
-            <div class="config-btn">雅川青</div>
-            <div class="config-btn">南糯紫</div>
+            <div
+                :class="{ selected: selectedColor === '白沙银' }"
+                class="config-btn"
+                @click="handleColorSelect('白沙银')">
+              白沙银
+            </div>
+            <div
+                :class="{ selected: selectedColor === '雅川青' }"
+                class="config-btn"
+                @click="handleColorSelect('雅川青')">
+              雅川青
+            </div>
+            <div
+                :class="{ selected: selectedColor === '南糯紫' }"
+                class="config-btn"
+                @click="handleColorSelect('南糯紫')">
+              南糯紫
+            </div>
           </div>
-        </div>
 
-        <div class="config-option">
-          <div class="config-title">选择版本</div>
-          <div class="config-buttons">
-            <div class="config-btn selected">12GB+512GB</div>
-            <div class="config-btn">12GB+1TB</div>
+          <div class="config-option">
+            <div class="config-title">选择版本</div>
+            <div class="config-buttons">
+              <div
+                  :class="{ selected: selectedVersion === '12GB+512GB' }"
+                  class="config-btn"
+                  @click="handleVersionSelect('12GB+512GB')">
+                12GB+512GB
+              </div>
+              <div
+                  :class="{ selected: selectedVersion === '12GB+1TB' }"
+                  class="config-btn"
+                  @click="handleVersionSelect('12GB+1TB')">
+                12GB+1TB
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="buy-buttons">
-          <button class="buy-btn">立即购买</button>
-          <button class="buy-btn">加入购物车</button>
-        </div>
+          <div class="buy-buttons">
+            <button class="buy-btn" @click="router.push('/shop')">立即购买</button>
+            <button class="buy-btn" @click="router.push('/shop')">加入购物车</button>
+          </div>
 
-        <div class="service-promise">
-          <div class="service-item">
-            次日达服务
-          </div>
-          <div class="service-item">
-            官方保修
-          </div>
-          <div class="service-item">
-            7天无理由退货
+          <div class="service-promise">
+            <div class="service-item">
+              次日达服务
+            </div>
+            <div class="service-item">
+              官方保修
+            </div>
+            <div class="service-item">
+              7天无理由退货
+            </div>
           </div>
         </div>
       </div>
@@ -75,12 +109,11 @@ import {NCarousel} from "naive-ui";
 </template>
 
 <style scoped>
-
 .flex {
   display: flex;
   width: 100%;
   max-width: 1200px;
-  height: 77vh;
+  height: 73vh;
   margin: 0 auto;
 }
 
