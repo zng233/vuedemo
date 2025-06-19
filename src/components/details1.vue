@@ -1,5 +1,5 @@
 <script setup>
-import {NCarousel, NDivider, NDescriptions} from "naive-ui";
+import {NCarousel, NFlex, NDescriptions} from "naive-ui";
 import {ref} from 'vue';
 import router from "@/components/router.js";
 
@@ -106,6 +106,25 @@ const handleVersionSelect = (version) => {
       </div>
     </div>
   </div>
+  <div>
+    <div class="flex1">
+      <div class="left1">
+        <div style="font-size: 20px">操作系统</div>
+      </div>
+      <div class="right2">
+        <div style="font-size: 15px;margin-top: 3px">Windows 11 家庭版</div>
+      </div>
+    </div>
+
+    <div class="flex1">
+      <div class="left1">
+        <div style="font-size: 20px">操作系统</div>
+      </div>
+      <div class="right2">
+        <div style="font-size: 15px;margin-top: 3px">Windows 11 家庭版</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -124,6 +143,23 @@ const handleVersionSelect = (version) => {
 }
 
 .right {
+  width: 50%;
+}
+
+.flex1 {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 20vh;
+  margin: 0 auto;
+}
+.left1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.right1 {
   width: 50%;
 }
 
